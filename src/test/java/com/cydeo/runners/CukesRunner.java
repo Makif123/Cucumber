@@ -8,8 +8,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "com/cydeo/step_definitons",
-        dryRun = true // true means that do not run my step definitions but only check if any step is missing snippet.
-
+        dryRun = false, // true means that do not run my step definitions but only check if any step is missing snippet.
+        tags = "@employee"
 
 )
 public class CukesRunner {
