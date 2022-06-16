@@ -24,4 +24,5 @@ Feature: Library app login feature
     When user enters admin username
     And user enter admin password
     Then user should see the dashboard
+# this is how we add a comment in feature files.Feature:
 
