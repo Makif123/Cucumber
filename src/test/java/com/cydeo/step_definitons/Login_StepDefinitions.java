@@ -1,6 +1,7 @@
 package com.cydeo.step_definitons;
 
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -40,5 +41,10 @@ public class Login_StepDefinitions {
     public void userEnterAdminPassword() {
         System.out.println("user enter admin password");
 
+    }
+
+
+    @Given("user is one the library login page")
+    public void userIsOneTheLibraryLoginPage() {
     }
 }
