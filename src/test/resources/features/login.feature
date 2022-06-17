@@ -9,8 +9,7 @@ Feature: Library app login feature
   Background: For the scenario in the feature file, user is expected to be on login page.
     Given user is one the library login page
 
-  @Librarian @employee @wip
-
+  @Librarian @employee
   Scenario: Login as librarian
     When user enters librarian username
     And user enters librarian password
