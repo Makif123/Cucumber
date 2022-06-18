@@ -6,10 +6,7 @@ package com.cydeo.step_definitons;
 
 
 import com.cydeo.utilities.Driver;
-import io.cucumber.java.After;
-import io.cucumber.java.AfterStep;
-import io.cucumber.java.Before;
-import io.cucumber.java.BeforeStep;
+import io.cucumber.java.*;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
@@ -17,27 +14,32 @@ import javax.swing.*;
 
 public class Hooks {
     // we import from io.cucumber.java not from junit
-    @Before (order = 1)
+    @Before(order = 1)
     public void setupScenario() {
         System.out.println("======Setting up browser using cucumber @Before");
 
     }
+
     @Before(value = "@login", order = 2)
     public void setupScenarioLogins() {
         System.out.println("======this will only apply to scenarios with @login tag");
 
     }
 
-    @Before(value = "@db",order = 0)
+    @Before(value = "@db", order = 0)
     public void setupForDataBaseScenarios() {
         System.out.println("======this will only apply to scenarios with @db tag");
 
     }
 
     @After
-    public void teardownScenario() {
-byte[] screenshot = ((TakesScreenshot)Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
-       Driver.closeDriver();
+    public void teardownScenario(Scenario scenario) {
+
+
+        byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+        scenario.attach(screenshot, "image/png", scenario.getName());
+
+        Driver.closeDriver();
 
 //        System.out.println("========Closing browser using cucumber @After");
 //        System.out.println("=====Scenario ended/ Take screen schoot");
@@ -49,7 +51,7 @@ byte[] screenshot = ((TakesScreenshot)Driver.getDriver()).getScreenshotAs(Output
     }
 
     @AfterStep
-    public void afterStep(){
+    public void afterStep() {
 
         System.out.println("------------> applying tearDown using @AfterStep");
     }
