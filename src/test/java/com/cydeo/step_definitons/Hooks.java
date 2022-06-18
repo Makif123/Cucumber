@@ -5,6 +5,7 @@ package com.cydeo.step_definitons;
     */
 
 
+import com.cydeo.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
@@ -31,8 +32,11 @@ public class Hooks {
 
     @After
     public void teardownScenario() {
-        System.out.println("========Closing browser using cucumber @After");
-        System.out.println("=====Scenario ended/ Take screen schoot");
+
+       Driver.closeDriver();
+
+//        System.out.println("========Closing browser using cucumber @After");
+//        System.out.println("=====Scenario ended/ Take screen schoot");
     }
 
     @BeforeStep
@@ -42,6 +46,7 @@ public class Hooks {
 
     @AfterStep
     public void afterStep(){
+
         System.out.println("------------> applying tearDown using @AfterStep");
     }
 
