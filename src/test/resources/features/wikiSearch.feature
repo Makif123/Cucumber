@@ -7,7 +7,7 @@ Feature: Wikipedia search functionality and verification
     And User clicks wiki search button
     Then User sees "Steve Jobs" is in the main header
 
-@scenarioOutline
+  @scenarioOutline
   Scenario Outline: Wikipedia Search Functionality Header Verification
     Given User is on Wikipedia home page
     When User types "<searchValue>" in the wiki search box
@@ -23,5 +23,7 @@ Feature: Wikipedia search functionality and verification
       | Chuck Norris      | Chuck Norris      | Chuck Norris       |
       | Antony Hopkins    | Antony Hopkins    | Antony Hopkins     |
       | Marie Curie       | Marie Curie       | Marie Curie        |
+      | Lady Gaga         | Lady Gaga         | Lady Gaga          |
+      | Katy Winslet      | Katy Winslet      | Katy Winslet       |
 
 
