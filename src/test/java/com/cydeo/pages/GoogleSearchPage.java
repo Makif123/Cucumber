@@ -14,15 +14,12 @@ public class GoogleSearchPage {
 
     //We can start locating web elements using @FindBy annotation
 
-    @FindBy(name="q")
+    @FindBy(name = "q")
     public WebElement searchBox;
 
-    @FindBy(xpath = "//div[text()='I agree']")
+
+    @FindBy(xpath = "(//div[@class='QS5gu sy4vM'])[2]")
     public WebElement acceptButton;
-
-
-
-
 
 
 }
