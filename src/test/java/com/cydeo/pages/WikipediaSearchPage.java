@@ -18,7 +18,7 @@ public class WikipediaSearchPage {
     public WebElement searchButton;
 
     @FindBy(id = "firstHeading")
-    public WebElement firstHead;
+    public WebElement mainHeader;
 
     @FindBy(xpath = "//div[@class = 'fn']")
     public WebElement photoHeader;
