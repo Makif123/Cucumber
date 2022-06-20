@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.Set;
@@ -55,6 +56,25 @@ public class BrowserUtils {
      */
     public static void verifyUrlContains(String expectedInUrl) {
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(expectedInUrl));
+    }
+
+    /**
+     * This method will accept a dropdown as a WebElement and return all of this options
+     * in a list of the String
+     * @param dropdownElement
+     * @return
+     */
+    public static List<String> dropdownOptionsAsString(WebElement dropdownElement) {
+        Select select = new Select(dropdownElement);
+        //List of all ACTUAL month <options> as a web element
+        List<WebElement> actualOptionsWebElement = select.getOptions();
+//List of all ACTUAL month <options> as a String
+        List<String> actionsOptionsString = new ArrayList<>();
+
+        for (WebElement each : actualOptionsWebElement) {
+            actionsOptionsString.add(each.getText());
+        }
+        return actionsOptionsString;
     }
 
 }
