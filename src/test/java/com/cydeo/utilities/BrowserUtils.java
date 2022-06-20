@@ -59,7 +59,7 @@ public class BrowserUtils {
     }
 
     /**
-     * This method will accept a dropdown as a WebElement and return all of this options
+     * This method will accept a dropdown as a WebElement and return all of this op
      * in a list of the String
      * @param dropdownElement
      * @return

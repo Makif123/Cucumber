@@ -2,6 +2,7 @@ package com.cydeo.step_definitons;
 
 import com.cydeo.pages.DropDownsPage;
 import com.cydeo.pages.WebTableLoginPage;
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -26,20 +27,14 @@ public class DataTablesStepDefinitions {
 
     }
 
+    DropDownsPage dropDownsPage = new DropDownsPage();
+
     @Then("User should see below info in month dropdown")
     public void user_should_see_below_info_in_month_dropdown(List<String> expectedMonths) {
-        DropDownsPage dropDownsPage = new DropDownsPage();
+        List<String> actualMonths = BrowserUtils.dropdownOptionsAsString(dropDownsPage.dropdown);
 
-        Select select = new Select(dropDownsPage.dropdown);
-       //List of all ACTUAL month <options> as a web element
-        List<WebElement> actualOptionsWebElement = select.getOptions();
-//List of all ACTUAL month <options> as a String
-        List<String> actionsOptionsString = new ArrayList<>();
 
-        for (WebElement each : actualOptionsWebElement) {
-            actionsOptionsString.add(each.getText());
-        }
-        Assert.assertEquals(expectedMonths, actionsOptionsString);
+        Assert.assertEquals(expectedMonths, actualMonths);
 
         //Assert will check the s ize of the list first. It is matching it will check content 1 by 1.
 
