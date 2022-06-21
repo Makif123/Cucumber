@@ -2,6 +2,8 @@ package com.cydeo.step_definitons;
 
 import com.cydeo.pages.BasePage;
 import com.cydeo.pages.WebTableLoginPage;
+import com.cydeo.utilities.ConfigurationReader;
+import com.cydeo.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -13,7 +15,8 @@ public class Order_StepDefinitions {
 
     @Given("user is already logged in and on order page")
     public void user_is_already_logged_in_and_on_order_page() {// Write code here that turns the phrase above into concrete actionsthrow new io.cucumber.java.PendingException();
-
+//Getting the page using the URL from configuration properties.
+        Driver.getDriver().get(ConfigurationReader.getProperty("web.table.url"));
         //Calling our login method to log in to web table app
         webTableLoginPage.login();
         //Clicking to "order" link to go order page
