@@ -23,6 +23,7 @@ public class Order_StepDefinitions {
         basePage.order.click();
     }
 
+
     @When("user selects product type {string}")
     public void user_selects_product_type(String string) {// Write code here that turns the phrase above into concrete actionsthrow new io.cucumber.java.PendingException();
 
