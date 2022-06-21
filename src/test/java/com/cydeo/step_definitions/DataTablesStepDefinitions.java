@@ -1,17 +1,12 @@
-package com.cydeo.step_definitons;
+package com.cydeo.step_definitions;
 
 import com.cydeo.pages.DropDownsPage;
-import com.cydeo.pages.WebTableLoginPage;
 import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class DataTablesStepDefinitions {

@@ -1,4 +1,4 @@
-package com.cydeo.step_definitons;
+package com.cydeo.step_definitions;
 
 import com.cydeo.pages.WikipediaSearchPage;
 import com.cydeo.utilities.Driver;

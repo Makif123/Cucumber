@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = "html:target/cucumber-report.html",
         features = "src/test/resources/features",
-        glue = "com/cydeo/step_definitons",
+        glue = "com/cydeo/step_definitions",
         dryRun = false, // true means that do not run my step definitions but only check if any step is missing snippet.
         tags = "@wip"
 )
